@@ -39,7 +39,7 @@ public class OrderService {
     }
 
     public OrderDto listOneOrder(Long id) {
-        var exists = orderRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Order not found"));
+        var exists = orderRepository.findById(id).orElseThrow(() -> new OrderNotFound("Order not found"));
         return new OrderDto(exists);
     }
 
