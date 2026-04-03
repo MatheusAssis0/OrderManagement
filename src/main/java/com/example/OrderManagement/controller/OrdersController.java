@@ -12,11 +12,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/orders")
-public class OrdersControllers {
+public class OrdersController {
 
     private final OrderService orderService;
 
-    public OrdersControllers(OrderService orderService) {
+    public OrdersController(OrderService orderService) {
         this.orderService = orderService;
     }
 
@@ -50,5 +50,3 @@ public class OrdersControllers {
         return ResponseEntity.ok(new OrderDto(order));
     }
 }
-
-//POST /orders/{id}/cancel

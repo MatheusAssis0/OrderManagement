@@ -30,61 +30,61 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(EmailAlreadyUsedException.class)
     public ResponseEntity EmailError(EmailAlreadyUsedException ex)
     {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("message", ex.getMessage()));
     }
 
     @ExceptionHandler(ProductNotFound.class)
     public ResponseEntity ProductNotFound(ProductNotFound ex)
     {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("message", ex.getMessage()));
     }
 
     @ExceptionHandler(OrderCannotBePaid.class)
     public ResponseEntity OrderCannotBePaid(OrderCannotBePaid ex)
     {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("message", ex.getMessage()));
     }
 
     @ExceptionHandler(OrderNotFound.class)
     public ResponseEntity OrderNotFound(OrderNotFound ex)
     {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("message", ex.getMessage()));
     }
 
     @ExceptionHandler(CustomerNotFound.class)
     public ResponseEntity CustomerNotFound(CustomerNotFound ex)
     {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("message", ex.getMessage()));
     }
 
     @ExceptionHandler(InvalidItemQuantity.class)
     public ResponseEntity InvalidItemQuantity(InvalidItemQuantity ex)
     {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("message", ex.getMessage()));
     }
 
     @ExceptionHandler(EmptyOrder.class)
     public ResponseEntity EmptyOrder(EmptyOrder ex)
     {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("message", ex.getMessage()));
     }
 
     @ExceptionHandler(InsufficientStock.class)
     public ResponseEntity InsufficientStock(InsufficientStock ex)
     {
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("error", ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("message", ex.getMessage()));
     }
 
     @ExceptionHandler(ConcurrentUpdateDetected.class)
     public ResponseEntity ConcurrentUpdateDetected(ConcurrentUpdateDetected ex)
     {
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("error", ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("message", ex.getMessage()));
     }
 
     @ExceptionHandler(OrderStatus.class)
     public ResponseEntity OrderStatus(OrderStatus ex)
     {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("message", ex.getMessage()));
     }
 
     private record ErrorValidation(String field, String message){
