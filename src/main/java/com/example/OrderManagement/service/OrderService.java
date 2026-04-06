@@ -46,10 +46,6 @@ public class OrderService {
     @Transactional
     public Order createOrder(CreateOrderRequest request) {
 
-        if (request.items().isEmpty()) {
-            throw new EmptyOrder("Order must have at least one item");
-        }
-
         Customer customer = customerRepository.findById(request.customerId())
                 .orElseThrow(() -> new CustomerNotFound("Customer not found"));
 

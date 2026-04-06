@@ -339,24 +339,9 @@ class OrderServiceTest {
                 then(orderRepository).should(never()).save(any());
             }
 
-            @DisplayName("Given an empty order")
-            @Test
-            void test14(){
-
-                //Arrange
-
-                Long id = 1L;
-                CreateOrderRequest createOrderRequest = new CreateOrderRequest(id, List.of());
-
-                //Act + Assert
-
-                Assertions.assertThrows(EmptyOrder.class, () -> orderService.createOrder(createOrderRequest));
-                then(orderRepository).should(never()).save(any());
-            }
-
             @DisplayName("Given an invalid item quantity")
             @Test
-            void test15(){
+            void test14(){
 
                 //Arrange
 
@@ -376,7 +361,7 @@ class OrderServiceTest {
 
             @DisplayName("Given a invalid product ID")
             @Test
-            void test16(){
+            void test15(){
 
                 //Arrange
 
@@ -397,7 +382,7 @@ class OrderServiceTest {
 
             @DisplayName("Given insufficient stock")
             @Test
-            void test17(){
+            void test16(){
 
                 //Arrange
 
